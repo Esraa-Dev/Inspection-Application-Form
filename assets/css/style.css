@@ -96,7 +96,7 @@ textarea {
 
 input,
 textarea {
-  background-color: rgb(230 242 251) !important;
+  /* background-color: rgb(230 242 251) !important; */
   border: none !important;
   outline: none !important;
 
@@ -123,3 +123,6 @@ input[name="observerSign"] {
   background-color: transparent !important;
 }
   
+.establish-data{
+  margin-top: 10px;
+}
