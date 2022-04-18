@@ -20,24 +20,32 @@
       crossorigin="anonymous"
     />
     <!-- custom style -->
+    <!-- <link rel="stylesheet" href="/static/css/report_style.css" /> -->
     <link rel="stylesheet" href="assets/css/style.css" />
+    <script>
+      function printPdfReport() {
+        window.print();
+      }
+    </script>
   </head>
-  <body>
+  <body onload="printPdfReport();" id="body">
     <!-- Start header -->
     <div class="container header d-flex justify-content-between mt-5 mb-4">
       <div class="logo">
-        <img src="assets/images/output-onlinepngtools.png" height="100px" />
-      </div>
+        <!-- <img src="/static/img/mot_logo_ar.png" /> -->
+        <img src="assets/images/logo.png" alt="logo"/>
+      </div> 
       <div class="header-content">
         <label for="header-content-label">التاريخ/Date:</label>
         <input
           dir="ltr"
           id="header-content-label"
           type=""
-          placeholder="25-Oct-2021"
+          placeholder=""
+          value="31-03-2022 01:15"
           class="text-center"
         />
-        <p>ﺇﺩﺍﺭﺓ ﺗرﺍﺧﻴﺺ ﺍﻟﻨﻘﻞ ﺍﻟﺒﺮﻱ</p>
+        <p>ﺇﺩارﺓ ﺗراﺧﻴﺺ اﻟﻨﻘﻞ اﻟﺒﺮي</p>
         <p>Land Transport Licensing Department</p>
       </div>
     </div>
@@ -48,7 +56,7 @@
       </h5>
       <form action="" method="get" autocomplete="on">
         <h6 class="font-weight-bold">
-          ﻗﺴﻢ ﺍﻟﺮﻗﺎﺑﺔ ﻭﺍﻟﺘﻔﺘﻴﺶ/Inspection and Control Section :
+          ﻗﺴﻢ اﻟﺮﻗﺎﺑﺔ واﻟﺘﻔﺘﻴﺶ/Inspection and Control Section :
         </h6>
 
         <div class="form-check border-line">
@@ -68,6 +76,7 @@
             name="items"
             value="تأجيرالسيارات بالسائق/Car Rental with Driver"
             id="rentalwith"
+            checked
           />
           <label class="form-check-label" for="rentalwith">
             تأجيرالسيارات بالسائق/Car Rental with Driver
@@ -83,12 +92,12 @@
             ﺃﻧشطة تأجير السيارات بدون سائق/Car Rental without Driver
           </label>
         </div>
-        <h6 class="font-weight-bold establish-data">
+        <h6 class="font-weight-bold establish_data">
           بيانات المنشأة/Establishment Information:
         </h6>
         <div class="form-group row border-line">
           <label for="commerceName" class="col-sm-3 col-form-label"
-            >ﺍﻻﺳﻢ ﺍﻟﺘﺠﺎﺭﻱ/Commercial Name</label
+            >اﻻﺳﻢ اﻟﺘﺠﺎري/Commercial Name</label
           >
           <div class="col-sm-9">
             <input
@@ -96,13 +105,14 @@
               class="form-control"
               name="commericalName"
               id="commerceName"
+              value="مالك"
               required
             />
           </div>
         </div>
         <div class="form-group border-line row">
           <label for="commerceNumer" class="col-sm-4 col-form-label"
-            >ﺭﻗﻢ ﺍﻟﺴﺠﻞ ﺍﻟﺘﺠﺎﺭﻱ/Commercial Reg. No.:</label
+            >رﻗﻢ اﻟﺴﺠﻞ اﻟﺘﺠﺎري/Commercial Reg. No.:</label
           >
           <div class="col-sm-8">
             <input
@@ -110,6 +120,7 @@
               name="commerceNumer"
               class="form-control"
               id="commerceNumer"
+              value="99009900"
               required
             />
           </div>
@@ -117,7 +128,7 @@
 
         <div class="form-group row border-line">
           <label for="establishType" class="col-sm-3 col-form-label"
-            >ﻧﻮﻉ المنشأة/Establishment Type:</label
+            >ﻧﻮع المنشأة/Establishment Type:</label
           >
           <div class="col-sm-9">
             <input
@@ -125,16 +136,16 @@
               class="form-control"
               name="establishType"
               id="establishType"
+              value="خاص"
               required
             />
           </div>
-        
         </div>
 
         <div class="form-group row border-line">
           <div class="row col-sm-6">
             <label for="startDate" class="col-sm-7 col-form-label"
-              >ﺗﺎريخ ﺇﺻﺪﺍﺭ ﺍﻟﺴﺠﻞ/Commercial Reg. Issuance Date:</label
+              >تاريخ ﺇﺻﺪار اﻟﺴﺠﻞ/Commercial Reg. Issuance Date:</label
             >
             <div class="col-sm-5">
               <input
@@ -142,6 +153,7 @@
                 name="startDate"
                 class="form-control"
                 id="startDate"
+                value="2022-03-31"
                 required
               />
             </div>
@@ -150,7 +162,7 @@
           <div class="row end-date col-sm-6">
             <div class="form-group row">
               <label for="endDate" class="col-sm-8 col-form-label"
-                >تاريخﺇنتهاءﺍﻟﺴﺠﻞ/Commercial Reg. Expiration Date:</label
+                >تاريخ إنتهاء اﻟﺴﺠﻞ/Commercial Reg. Expiration Date:</label
               >
               <div class="col-sm-4">
                 <input
@@ -158,6 +170,7 @@
                   class="form-control"
                   id="endDate"
                   required
+                  value="2022-07-29"
                   name="endDate"
                 />
               </div>
@@ -167,7 +180,7 @@
 
         <div class="form-group row border-line">
           <label for="postBox" class="col-sm-3 col-form-label"
-            >ﺻﻨﺪﻭﻕ البريد/P.O. Box:</label
+            >صندوق البريد /P.O. Box:</label
           >
           <div class="col-sm-9">
             <input
@@ -175,6 +188,7 @@
               name="postBox"
               class="form-control"
               id="postBox"
+              value="97"
               required
             />
           </div>
@@ -182,7 +196,7 @@
 
         <div class="form-group row border-line">
           <label for="inputemail" class="col-sm-3 col-form-label"
-            >ﺍﻟﺒريد ﺍﻹﻟﻜﺘرﻭﻧﻲ/Email:</label
+            >البريد اﻹﻟﻜﺘروﻧﻲ/Email:</label
           >
           <div class="col-sm-9">
             <input
@@ -190,6 +204,7 @@
               name="email"
               class="form-control"
               id="inputemail"
+              value="anahhal1586@gmail.com"
               required
             />
           </div>
@@ -197,11 +212,13 @@
 
         <h6 class="font-weight-bold">ﻣﻮﻗﻊ المنشأة/Establishment Location:</h6>
 
-        <p class="border-line">ﻣﻘﺮ المنشأة ﺍﻟﺮﺋﻴﺴﻲ/:Establishment HQ</p>
+        <p class="border-line establish_data">
+          ﻣﻘﺮ المنشأة اﻟﺮﺋﻴﺴﻲ/:Establishment HQ
+        </p>
         <div class="establish row border-line">
           <div class="col-sm-4 form-group row">
             <label for="establishHomeSteet" class="col-sm-6 col-form-label"
-              >ﺍﺳﻢ ﺍﻟﺸﺎرﻉ/Street Name:</label
+              >اﺳﻢ اﻟﺸﺎرع/Street Name:</label
             >
             <div class="col-sm-6">
               <input
@@ -210,6 +227,7 @@
                 name="establishHomeSteet"
                 id="establishHomeSteet"
                 required
+                value="شارع شارع"
               />
             </div>
           </div>
@@ -225,13 +243,14 @@
                 name="streetNumber"
                 id="streetNumber"
                 required
+                value="5"
               />
             </div>
           </div>
 
           <div class="col-sm-4 form-group row">
             <label for="buildingNumber" class="col-sm-5 col-form-label"
-              >ﺭﻗﻢ ﺍﻟﻤﺒﻨﻰ/Bldg. No.:</label
+              >رﻗﻢ اﻟﻤﺒﻨﻰ/Building. No.:</label
             >
             <div class="col-sm-7">
               <input
@@ -240,13 +259,14 @@
                 name="buildingNumber"
                 id="buildingNumber"
                 required
+                value="123"
               />
             </div>
           </div>
         </div>
 
-        <h6 class="font-weight-bold">
-          ﻭﺳﻴﻠﺔ ﺍﻻﺗﺼﺎﻝ ﺑﺎﻟﻤﻨﺸﺄﺓ/Establishment Contact Details:
+        <h6 class="font-weight-bold establish_data">
+          وﺳﻴﻠﺔ اﻻﺗﺼﺎﻝ ﺑﺎﻟﻤﻨﺸﺄﺓ/Establishment Contact Details:
         </h6>
 
         <div class="form-group row border-line">
@@ -261,6 +281,7 @@
                 name="establishOwner"
                 id="establishOwner"
                 required
+                value="فهد بن جاسم"
               />
             </div>
           </div>
@@ -268,7 +289,7 @@
           <div class="row end-date col-sm-6">
             <div class="form-group row">
               <label for="inputTel" class="col-sm-4 col-form-label"
-                >ﺍﻟﻬﺎتف/Telephone</label
+                >الهاتف/Telephone</label
               >
               <div class="col-sm-8">
                 <input
@@ -277,6 +298,7 @@
                   name="inputTel"
                   id="inputTel"
                   required
+                  value="0222222"
                 />
               </div>
             </div>
@@ -286,7 +308,7 @@
         <div class="form-group row border-line">
           <div class="row start-date col-sm-6">
             <label for="establishManger" class="col-sm-5 col-form-label"
-              >المدير ﺍﻟﺘﻨﻔﻴﺬﻱ للمنشأة/Executive Director:</label
+              >المدير اﻟﺘﻨﻔﻴﺬي ﻟﻠﻤﻨﺸﺄﺓ/Executive Director:</label
             >
             <div class="col-sm-6">
               <input
@@ -295,6 +317,7 @@
                 name="establishManger"
                 id="establishManger"
                 required
+                value="أحمد النحال"
               />
             </div>
           </div>
@@ -302,7 +325,7 @@
           <div class="row end-date col-sm-6">
             <div class="form-group row">
               <label for="managerTel" class="col-sm-4 col-form-label"
-                >ﺍﻟﻬﺎتف/Telephone</label
+                >الهاتف/Telephone</label
               >
               <div class="col-sm-8">
                 <input
@@ -311,6 +334,7 @@
                   id="managerTel"
                   name="managerTel"
                   required
+                  value="888555222"
                 />
               </div>
             </div>
@@ -320,7 +344,7 @@
         <div class="form-group row border-line">
           <div class="row start-date col-sm-6">
             <label for="establishRresent" class="col-sm-5 col-form-label"
-              >مندوب المنشأة /Representative:</label
+              >ﻣﻨﺪوب المنشأة /Representative:</label
             >
             <div class="col-sm-7">
               <input
@@ -329,6 +353,7 @@
                 name="establishRresent"
                 id="establishRresent"
                 required
+                value="جبر"
               />
             </div>
           </div>
@@ -336,7 +361,7 @@
           <div class="row end-date col-sm-6">
             <div class="form-group row">
               <label for="represenTel" class="col-sm-4 col-form-label"
-                >ﺍﻟﻬﺎتف/Telephone</label
+                >الهاتف/Telephone</label
               >
               <div class="col-sm-8">
                 <input
@@ -345,23 +370,20 @@
                   id="represenTel"
                   name="represenTel"
                   required
+                  value="4444444"
                 />
               </div>
             </div>
           </div>
         </div>
-        <p class="border-line">
-          ﺗﻮﻗﻴﻊ ﺍﻟﻤﺪيرأو ﻣﻦ ﻳﻨﻮﺏ ﻋﻨﻪ/ General Mgr.Designee Signature:
-        </p>
-
         <h6 class="font-weight-bold">
-          (بيانات المعاين)ﺍﻟﻤﻔﺘﺶ/ Inspector’s Information:
+          (بيانات المعاين)اﻟﻤﻔﺘﺶ/ Inspector’s Information:
         </h6>
 
         <div class="form-group row border-line">
           <div class="row start-date col-sm-6">
             <label for="observerName" class="col-sm-5 col-form-label"
-              >ﺍﺳﻢﺍﻟﻤﻌﺎين/Name:</label
+              >اﺳﻢ اﻟﻤﻌﺎين/Name:</label
             >
             <div class="col-sm-7">
               <input
@@ -369,25 +391,9 @@
                 name="observerName"
                 class="form-control"
                 id="observerName"
+                value="Admin Firstname Admin Lastname"
                 required
               />
-            </div>
-          </div>
-
-          <div class="row end-date col-sm-6">
-            <div class="form-group row">
-              <label for="observerSign" class="col-sm-4 col-form-label"
-                >ﺍﻟﺘﻮﻗﻴﻊ/:Signature:</label
-              >
-              <div class="col-sm-8">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="observerSign"
-                  name="observerSign"
-                  required
-                />
-              </div>
             </div>
           </div>
         </div>
@@ -395,7 +401,7 @@
         <div class="form-group row border-line">
           <div class="row start-date col-sm-6">
             <label for="observeDate" class="col-sm-5 col-form-label"
-              >ﺗﺎريخ ﺍﻟﻤﻌﺎﻳﻨﺔ /Inspection Date:</label
+              >تاريخ اﻟﻤﻌﺎﻳﻨﺔ /Inspection Date:</label
             >
             <div class="col-sm-7">
               <input
@@ -404,6 +410,7 @@
                 class="form-control"
                 id="observeDate"
                 required
+                value="31-03-2022"
               />
             </div>
           </div>
@@ -420,6 +427,7 @@
                   id="observeTime"
                   name="observeTime"
                   required
+                  value="01:15"
                 />
               </div>
             </div>
@@ -427,108 +435,8 @@
         </div>
 
         <div class="form-group border-line">
-          <label for="notesTextarea">الملاحظات/Notes:</label>
-          <textarea
-            class="form-control"
-            id="notesTextarea"
-            name="notesTextarea"
-            required
-          ></textarea>
-        </div>
-
-        <div class="form-group row border-line">
-          <label for="inputtext" class="col-sm-5 col-form-label"
-            >ﻳﻌﺘﻤﺪ ﻗﺴﻢ ﺍﻟﺮﻗﺎﺑﺔ ﻭﺍﻟﺘﻔﺘﻴﺶ/Approval of Inspection & Control
-            Dept.Section:</label
-          >
-          <div class="col-sm-7">
-            <input
-              type="text"
-              class="form-control"
-              id="inputtext"
-              name="inputtext"
-            />
-          </div>
-        </div>
-
-        <div class="form-group row border-line">
-          <div class="row start-date col-sm-6">
-            <label for="inputSign" class="col-sm-5 col-form-label"
-              >ﺍﻟﺘﻮﻗﻴﻊ/:Signature:</label
-            >
-            <div class="col-sm-7">
-              <input
-                type="text"
-                name="inputSign"
-                class="form-control"
-                id="inputSign"
-              />
-            </div>
-          </div>
-
-          <div class="row end-date col-sm-6">
-            <div class="form-group row">
-              <label for="inputDate" class="col-sm-4 col-form-label"
-                >التاريخ/Date:</label
-              >
-              <div class="col-sm-8">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="inputDate"
-                  name="inputDate"
-                  required
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="form-group row border-line">
-          <label for="inputtext" class="col-sm-5 col-form-label"
-            >ﻳﻌﺘﻤﺪ ﻣﺪيرإدارة ﺗرﺍﺧﻴﺺ ﺍﻟﻨﻘﻞ ﺍﻟﺒﺮﻱ ﺑﺎﻹﻧﺎﺑﺔ/Approval of Land
-            Transport Licensing Director :</label
-          >
-          <div class="col-sm-7">
-            <input
-              type="text"
-              name="inputtext"
-              name="inputtext"
-              class="form-control"
-              id="inputtext"
-            />
-          </div>
-        </div>
-        <div class="form-group row border-line">
-          <div class="row start-date col-sm-6">
-            <label for="lastSign" class="col-sm-5 col-form-label"
-              >ﺍﻟﺘﻮﻗﻴﻊ/:Signature:</label
-            >
-            <div class="col-sm-7">
-              <input
-                type="text"
-                name="lastSign"
-                class="form-control"
-                id="lastSign"
-              />
-            </div>
-          </div>
-
-          <div class="row end-date col-sm-6">
-            <div class="form-group row">
-              <label for="lastDate" class="col-sm-4 col-form-label"
-                >التاريخ/Date:</label
-              >
-              <div class="col-sm-8">
-                <input
-                  type="text"
-                  class="form-control"
-                  id="lastDate"
-                  name="lastDate"
-                />
-              </div>
-            </div>
-          </div>
+          <label for="tests">الملاحظات/Notes:</label><br />
+          <span id="tests" class="form-group"> </span>
         </div>
       </form>
     </div>
